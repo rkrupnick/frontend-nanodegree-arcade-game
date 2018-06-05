@@ -36,6 +36,10 @@ Player.prototype.update = function() {
 
 }
 
+Player.prototype.render = function() {
+
+}
+
 // Now instantiate your objects.
 const player = new Player(),
       enemy1 = new Enemy();
