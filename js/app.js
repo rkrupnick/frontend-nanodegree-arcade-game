@@ -32,7 +32,9 @@ var Player = function() {
 
 // This class requires an update(), render() and
 // a handleInput() method.
+Player.prototype.update = function() {
 
+}
 
 // Now instantiate your objects.
 const player = new Player(),
