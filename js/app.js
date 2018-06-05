@@ -27,7 +27,12 @@ Enemy.prototype.render = function() {
 
 // Now write your own player class
 var Player = function() {
+    // Add initial location
+    this.x = 200;
+    this.y = 400;
 
+    // The image for the player
+    this.sprite = 'images/char-cat-girl.png';
 }
 
 // This class requires an update(), render() and
@@ -37,7 +42,7 @@ Player.prototype.update = function() {
 }
 
 Player.prototype.render = function() {
-
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
 // Now instantiate your objects.
