@@ -50,6 +50,15 @@ Player.prototype.handleInput = function(input) {
         case 'up':
             this.y -=83;
             break;
+        case 'down':
+            this.y +=83;
+            break;
+        case 'left':
+            this.x -=101;
+            break;
+        case 'right':
+            this.x +=101;
+            break;
     };
 };
 
