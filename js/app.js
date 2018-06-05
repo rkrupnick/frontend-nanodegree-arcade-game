@@ -33,17 +33,25 @@ var Player = function() {
 
     // The image for the player
     this.sprite = 'images/char-cat-girl.png';
-}
+};
 
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function() {
 
-}
+};
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
+
+Player.prototype.handleInput = function(input) {
+    switch(input) {
+        case 'up':
+            this.y -=83;
+            break;
+    };
+};
 
 // Now instantiate your objects.
 const player = new Player(),
