@@ -3,6 +3,7 @@ const Enemy = function(x, y, speed) {
     // Add initial location of enemy
     this.x = x;
     this.y = y;
+    // Add initial speed for enemy
     this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -21,12 +22,8 @@ Enemy.prototype.update = function(dt) {
         this.x += this.speed * dt;
     }
 
-    if (this.x < (player.x + 55) && this.x > (player.x - 55)) {
-        if (this.y < (player.y + 25) && this.y > (player.y - 25)) {
-            player.x = 200;
-            player.y = 400;
-        }
-    }
+    checkWin();
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -119,5 +116,15 @@ closeModal.onclick = function() {
 window.onclick = function() {
     if (event.target == winningModal) {
         winningModal.classList.remove('visible');
+    }
+}
+
+// Checks if the player has reached the water and won
+const checkWin = function() {
+    if (this.x < (player.x + 55) && this.x > (player.x - 55)) {
+        if (this.y < (player.y + 25) && this.y > (player.y - 25)) {
+            player.x = 200;
+            player.y = 400;
+        }
     }
 }
