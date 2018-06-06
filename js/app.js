@@ -21,8 +21,8 @@ Enemy.prototype.update = function(dt) {
         this.x += 101 * dt;
     }
 
-    if (this.x < (player.x + 25) && this.x > (player.x -25)) {
-        if (this.y < (player.y + 25) && this.y > (player.y -25)) {
+    if (this.x < (player.x + 55) && this.x > (player.x - 55)) {
+        if (this.y < (player.y + 25) && this.y > (player.y - 25)) {
             player.x = 200;
             player.y = 400;
         }
