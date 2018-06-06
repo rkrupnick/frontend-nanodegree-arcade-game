@@ -7,7 +7,7 @@ const Enemy = function(x, y, speed) {
     this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-taxi.png';
+    this.sprite = 'images/enemy-bug.png';
 };
 
 // Update the enemy's position, required method for game
@@ -22,7 +22,7 @@ Enemy.prototype.update = function(dt) {
         this.x += this.speed * dt;
     }
 
-    checkWin();
+    collision(this.x, this.y);
 
 };
 
@@ -44,11 +44,7 @@ const Player = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function() {
-    if (this.y <= -15) {
-        winningModal.classList.add('visible');
-        this.x = 200;
-        this.y = 400;
-    }
+    checkWin(this.x, this.y);
 };
 
 Player.prototype.render = function() {
@@ -120,9 +116,18 @@ window.onclick = function() {
 }
 
 // Checks if the player has reached the water and won
-const checkWin = function() {
-    if (this.x < (player.x + 55) && this.x > (player.x - 55)) {
-        if (this.y < (player.y + 25) && this.y > (player.y - 25)) {
+const checkWin = function(x,y) {
+    if (y <= -15) {
+        winningModal.classList.add('visible');
+        player.x = 200;
+        player.y = 400;
+    }
+}
+
+// Handles collisions with enemies
+const collision = function(x,y) {
+    if (x < (player.x + 55) && x > (player.x - 55)) {
+        if (y < (player.y + 25) && y > (player.y - 25)) {
             player.x = 200;
             player.y = 400;
         }
