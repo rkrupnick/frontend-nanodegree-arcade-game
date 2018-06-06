@@ -1,12 +1,12 @@
-const Enemy = function(x, y) {
+const Enemy = function(x, y, speed) {
 
     // Add initial location of enemy
     this.x = x;
     this.y = y;
-
+    this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'images/enemy-taxi.png';
 };
 
 // Update the enemy's position, required method for game
@@ -17,8 +17,8 @@ Enemy.prototype.update = function(dt) {
     // all computers.
     if (this.x >= 505) {
         this.x = 101 * dt;
-    } else {
-        this.x += 101 * dt;
+    }  else {
+        this.x += this.speed * dt;
     }
 
     if (this.x < (player.x + 55) && this.x > (player.x - 55)) {
@@ -85,9 +85,9 @@ Player.prototype.handleInput = function(input) {
 
 // Now instantiate your objects.
 const player = new Player(),
-      enemy1 = new Enemy(1, 64),
-      enemy2 = new Enemy(200, 148),
-      enemy3 = new Enemy(320, 230);
+      enemy1 = new Enemy(1, 64, 101),
+      enemy2 = new Enemy(200, 148, 200),
+      enemy3 = new Enemy(320, 230, 155);
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [enemy1, enemy2, enemy3];
