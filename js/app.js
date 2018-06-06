@@ -20,6 +20,13 @@ Enemy.prototype.update = function(dt) {
     } else {
         this.x += 101 * dt;
     }
+
+    if (this.x < (player.x + 25) && this.x > (player.x -25)) {
+        if (this.y < (player.y + 25) && this.y > (player.y -25)) {
+            player.x = 200;
+            player.y = 400;
+        }
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -41,9 +48,10 @@ const Player = function() {
 // a handleInput() method.
 Player.prototype.update = function() {
     if (this.y <= -15) {
-        console.log('You won!');
+        winningModal.classList.add('visible');
+        this.x = 200;
+        this.y = 400;
     }
-    console.log(this.x, this.y);
 };
 
 Player.prototype.render = function() {
@@ -97,3 +105,19 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+// Winning Modal based on w#schools How to CSS Modals
+// https://www.w3schools.com/howto/howto_css_modals.asp
+const winningModal = document.querySelector('.winning-modal'),
+      closeModal = document.querySelector('.close-modal');
+
+closeModal.onclick = function() {
+    winningModal.classList.remove('visible');
+}
+
+window.onclick = function() {
+    if (event.target == winningModal) {
+        winningModal.classList.remove('visible');
+    }
+}
