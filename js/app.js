@@ -76,7 +76,7 @@ Player.prototype.handleInput = function(input) {
                 this.x +=101;
             }
             break;
-    };
+    }
 };
 
 // Now instantiate your objects.
@@ -112,13 +112,13 @@ const winningModal = document.querySelector('.winning-modal'),
 // When user clicks the 'x', the modal closes
 closeModal.onclick = function() {
     winningModal.classList.remove('visible');
-}
+};
 // When user clicks outside the modal content, the modal closes
 window.onclick = function() {
     if (event.target == winningModal) {
         winningModal.classList.remove('visible');
     }
-}
+};
 
 // Checks if the player has reached the water and won
 const checkWin = function(x,y) {
@@ -127,7 +127,7 @@ const checkWin = function(x,y) {
         player.x = 200;
         player.y = 400;
     }
-}
+};
 
 // Handles collisions with enemies
 const collision = function(x,y) {
@@ -137,4 +137,4 @@ const collision = function(x,y) {
             player.y = 400;
         }
     }
-}
+};

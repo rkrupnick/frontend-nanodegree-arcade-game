@@ -6,6 +6,6 @@
 2. Open index.html in your browser
 3. Use your arrow keys to get the player to the water
 
-
-
-Taxi Image - https://www.kisspng.com/png-royalty-free-stock-photography-clip-art-yellow-tax-446132/
+####Sources
+-Images, game engine, and resources.js (image loading) assets supplied by Udacity.
+-Modal inspired by [w3Schools How to CSS Modals](https://www.w3schools.com/howto/howto_css_modals.asp)
