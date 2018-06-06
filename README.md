@@ -5,6 +5,7 @@
 1. Download all game files
 2. Open index.html in your browser
 3. Use your arrow keys to get the player to the water
+4. Don't run into a bug! That will restart the game!
 
 #### Sources
 - Images, game engine, and resources.js (image loading) assets supplied by Udacity.
