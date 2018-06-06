@@ -16,12 +16,15 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    // Loop the enemies
     if (this.x >= 505) {
         this.x = 101 * dt;
     }  else {
         this.x += this.speed * dt;
     }
 
+    // Check for collisions
     collision(this.x, this.y);
 
 };
@@ -79,17 +82,18 @@ Player.prototype.handleInput = function(input) {
 // Now instantiate your objects.
 const player = new Player(),
       enemy1 = new Enemy(1, 64, 101),
-      enemy2 = new Enemy(200, 148, 200),
-      enemy3 = new Enemy(320, 230, 155);
+      enemy2 = new Enemy(200, 148, 220),
+      enemy3 = new Enemy(320, 230, 155),
+      enemy4 = new Enemy(400, 148, 50);
 
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [enemy1, enemy2, enemy3];
+const allEnemies = [enemy1, enemy2, enemy3, enemy4];
 
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    const allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
@@ -103,12 +107,13 @@ document.addEventListener('keyup', function(e) {
 // Winning Modal based on w#schools How to CSS Modals
 // https://www.w3schools.com/howto/howto_css_modals.asp
 const winningModal = document.querySelector('.winning-modal'),
-      closeModal = document.querySelector('.close-modal');
+    closeModal = document.querySelector('.close-modal');
 
+// When user clicks the 'x', the modal closes
 closeModal.onclick = function() {
     winningModal.classList.remove('visible');
 }
-
+// When user clicks outside the modal content, the modal closes
 window.onclick = function() {
     if (event.target == winningModal) {
         winningModal.classList.remove('visible');
