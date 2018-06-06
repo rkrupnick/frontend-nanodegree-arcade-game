@@ -1,6 +1,4 @@
 const Enemy = function(x, y) {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
 
     // Add initial location of enemy
     this.x = x;
@@ -18,7 +16,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     if (this.x >= 505) {
-        this.x = 1 * dt;
+        this.x = 101 * dt;
     } else {
         this.x += 101 * dt;
     }
@@ -42,7 +40,10 @@ const Player = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function() {
-
+    if (this.y <= -15) {
+        console.log('You won!');
+    }
+    console.log(this.x, this.y);
 };
 
 Player.prototype.render = function() {
@@ -52,16 +53,24 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(input) {
     switch(input) {
         case 'up':
-            this.y -=83;
+            if (this.y > -15) {
+                this.y -=83;
+            }
             break;
         case 'down':
-            this.y +=83;
+            if (this.y < 400) {
+                this.y +=83;
+            }
             break;
         case 'left':
-            this.x -=101;
+            if (this.x > -2) {
+                this.x -=101;
+            }
             break;
         case 'right':
-            this.x +=101;
+            if (this.x < 402) {
+                this.x +=101;
+            }
             break;
     };
 };
