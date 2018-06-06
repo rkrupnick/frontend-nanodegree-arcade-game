@@ -1,4 +1,3 @@
-// Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -18,6 +17,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    this.x += 101 * dt;
 };
 
 // Draw the enemy on the screen, required method for game
@@ -68,9 +68,6 @@ const player = new Player(),
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [enemy1];
-
-// Place the player object in a variable called player
-
 
 
 // This listens for key presses and sends the keys to your
