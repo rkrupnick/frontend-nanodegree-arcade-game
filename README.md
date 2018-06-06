@@ -7,5 +7,5 @@
 3. Use your arrow keys to get the player to the water
 
 #### Sources
--Images, game engine, and resources.js (image loading) assets supplied by Udacity.
--Modal inspired by [w3Schools How to CSS Modals](https://www.w3schools.com/howto/howto_css_modals.asp)
+- Images, game engine, and resources.js (image loading) assets supplied by Udacity.
+- Modal inspired by [w3Schools How to CSS Modals](https://www.w3schools.com/howto/howto_css_modals.asp)
