@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 const Enemy = function(x, y, speed) {
 
     // Add initial location of enemy
@@ -87,7 +89,16 @@ Player.prototype.handleInput = function(input) {
             }
             break;
     }
-    checkWin(this.x, this.y);
+    this.checkWin(this.x, this.y);
+};
+
+// Checks if the player has reached the water and won
+Player.prototype.checkWin = function(x,y) {
+    if (y <= -15) {
+        winningModal.classList.add('visible');
+        player.x = 200;
+        player.y = 400;
+    }
 };
 
 // Now instantiate your objects.
@@ -131,12 +142,5 @@ window.onclick = function() {
     }
 };
 
-// Checks if the player has reached the water and won
-const checkWin = function(x,y) {
-    if (y <= -15) {
-        winningModal.classList.add('visible');
-        player.x = 200;
-        player.y = 400;
-    }
-};
+
 
