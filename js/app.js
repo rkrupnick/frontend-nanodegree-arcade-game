@@ -27,7 +27,7 @@ Enemy.prototype.update = function(dt) {
     }
 
     // Check for collisions
-    collision(this.x, this.y);
+    this.collision(this.x, this.y);
 
 };
 
@@ -36,6 +36,15 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Handles collisions with enemies
+Enemy.prototype.collision = function(x,y) {
+    if (x < (player.x + 55) && x > (player.x - 55)) {
+        if (y < (player.y + 25) && y > (player.y - 25)) {
+            player.x = 200;
+            player.y = 400;
+        }
+    }
+};
 // Now write your own player class
 const Player = function() {
     // Add initial location
@@ -131,12 +140,3 @@ const checkWin = function(x,y) {
     }
 };
 
-// Handles collisions with enemies
-const collision = function(x,y) {
-    if (x < (player.x + 55) && x > (player.x - 55)) {
-        if (y < (player.y + 25) && y > (player.y - 25)) {
-            player.x = 200;
-            player.y = 400;
-        }
-    }
-};
