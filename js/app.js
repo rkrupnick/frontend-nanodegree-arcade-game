@@ -58,7 +58,6 @@ const Player = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function() {
-    checkWin(this.x, this.y);
 };
 
 Player.prototype.render = function() {
@@ -88,6 +87,7 @@ Player.prototype.handleInput = function(input) {
             }
             break;
     }
+    checkWin(this.x, this.y);
 };
 
 // Now instantiate your objects.
