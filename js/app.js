@@ -1,3 +1,5 @@
+'use strict';
+
 const Enemy = function(x, y, speed) {
 
     // Add initial location of enemy
