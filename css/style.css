@@ -44,3 +44,17 @@ body {
 .visible {
   display: block;
 }
+
+/*
+* Score Panel
+*/
+
+#lives {
+  margin-bottom: -70px;
+  margin-top: -40px;
+}
+
+.lives-heart {
+  width: 65px;
+  height: auto;
+}

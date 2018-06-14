@@ -44,6 +44,7 @@ Enemy.prototype.collision = function(x,y) {
         if (y < (player.y + 25) && y > (player.y - 25)) {
             player.x = 200;
             player.y = 400;
+            player.minusHeart();
         }
     }
 };
@@ -55,6 +56,7 @@ const Player = function() {
 
     // The image for the player
     this.sprite = 'images/char-cat-girl.png';
+    this.lives = 3;
 };
 
 // This class requires an update(), render() and
@@ -101,6 +103,14 @@ Player.prototype.checkWin = function(x,y) {
     }
 };
 
+Player.prototype.minusHeart = function() {
+    const hearts = document.querySelector('#lives');
+    if (player.lives > 1) {
+        player.lives -= 1;
+        lives.children[0].remove();
+    }
+}
+
 // Now instantiate your objects.
 const player = new Player(),
       enemy1 = new Enemy(1, 64, 101),
@@ -141,6 +151,5 @@ window.onclick = function() {
         winningModal.classList.remove('visible');
     }
 };
-
 
 
