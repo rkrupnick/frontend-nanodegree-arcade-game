@@ -143,11 +143,15 @@ document.addEventListener('keyup', function(e) {
 // https://www.w3schools.com/howto/howto_css_modals.asp
 const winningModal = document.querySelector('.winning-modal'),
     losingModal = document.querySelector('.losing-modal'),
-    closeModal = document.querySelector('.close-modal');
+    closeWinModal = document.querySelector('.close-winning-modal'),
+    closeLoseModal = document.querySelector('.close-losing-modal');
 
 // When user clicks the 'x', the modal closes
-closeModal.onclick = function() {
+closeWinModal.onclick = function() {
     winningModal.classList.remove('visible');
+};
+
+closeLoseModal.onclick = function() {
     losingModal.classList.remove('visible');
 };
 // When user clicks outside the modal content, the modal closes

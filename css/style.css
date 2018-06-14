@@ -49,9 +49,10 @@ body {
 * Score Panel
 */
 
-#lives {
-  margin-bottom: -70px;
-  margin-top: -40px;
+#score-panel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -60px;
 }
 
 .lives-heart {
