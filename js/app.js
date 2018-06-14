@@ -48,6 +48,11 @@ Enemy.prototype.collision = function(x,y) {
         }
     }
 };
+
+const speedUp = function() {
+    allEnemies.map(e => e.speed *= 1.25);
+}
+
 // Now write your own player class
 const Player = function() {
     // Add initial location
@@ -100,6 +105,7 @@ Player.prototype.checkWin = function(x,y) {
         winningModal.classList.add('visible');
         player.x = 200;
         player.y = 400;
+        speedUp();
     }
 };
 
