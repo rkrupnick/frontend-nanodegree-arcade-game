@@ -6,7 +6,7 @@ body {
 /*
 *   Modal CSS *Based on W3Schools Css Modals https://www.w3schools.com/howto/howto_css_modals.asp;
 */
-.winning-modal {
+.modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -19,7 +19,7 @@ body {
   background-color: rgba(0,0,0,0.4); /* Black with opacity */
 }
 
-.winning-modal-content {
+.modal-content {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;

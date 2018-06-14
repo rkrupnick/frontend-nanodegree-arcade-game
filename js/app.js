@@ -108,6 +108,9 @@ Player.prototype.minusHeart = function() {
     if (player.lives > 1) {
         player.lives -= 1;
         lives.children[0].remove();
+    } else {
+        lives.children[0].remove();
+        losingModal.classList.add('visible');
     }
 }
 
@@ -139,16 +142,20 @@ document.addEventListener('keyup', function(e) {
 // Winning Modal based on w#schools How to CSS Modals
 // https://www.w3schools.com/howto/howto_css_modals.asp
 const winningModal = document.querySelector('.winning-modal'),
+    losingModal = document.querySelector('.losing-modal'),
     closeModal = document.querySelector('.close-modal');
 
 // When user clicks the 'x', the modal closes
 closeModal.onclick = function() {
     winningModal.classList.remove('visible');
+    losingModal.classList.remove('visible');
 };
 // When user clicks outside the modal content, the modal closes
 window.onclick = function() {
     if (event.target == winningModal) {
         winningModal.classList.remove('visible');
+    } else if (event.target === losingModal) {
+        losingModal.classList.remove('visible');
     }
 };
 
