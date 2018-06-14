@@ -1,3 +1,8 @@
+// TODO: Count rounds in winning modal
+// TODO: 'Reset' after losing
+// TODO: Score system
+// TODO: Character selection
+
 'use strict';
 
 
