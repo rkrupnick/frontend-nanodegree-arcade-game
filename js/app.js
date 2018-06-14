@@ -102,7 +102,7 @@ Player.prototype.handleInput = function(input) {
 // Checks if the player has reached the water and won
 Player.prototype.checkWin = function(x,y) {
     if (y <= -15) {
-        winningModal.classList.add('visible');
+        displayWinModal();
         player.x = 200;
         player.y = 400;
         speedUp();
@@ -168,5 +168,10 @@ window.onclick = function() {
         losingModal.classList.remove('visible');
     }
 };
+
+function displayWinModal() {
+    winningModal.classList.add('visible');
+    setTimeout(function() {winningModal.classList.remove('visible');}, 1500);
+}
 
 
