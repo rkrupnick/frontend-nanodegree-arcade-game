@@ -155,7 +155,9 @@ document.addEventListener('keyup', function(e) {
 const winningModal = document.querySelector('.winning-modal'),
     losingModal = document.querySelector('.losing-modal'),
     closeWinModal = document.querySelector('.close-winning-modal'),
-    closeLoseModal = document.querySelector('.close-losing-modal');
+    closeLoseModal = document.querySelector('.close-losing-modal'),
+    roundsText = document.querySelector('.rounds');
+let rounds = 1;
 
 // When user clicks the 'x', the modal closes
 closeWinModal.onclick = function() {
@@ -176,6 +178,8 @@ window.onclick = function() {
 
 function displayWinModal() {
     winningModal.classList.add('visible');
+    rounds += 1;
+    roundsText.innerText = rounds;
     setTimeout(function() {winningModal.classList.remove('visible');}, 1500);
 }
 
