@@ -13,3 +13,7 @@
 #### Sources
 - Images, game engine, and resources.js (image loading) assets supplied by Udacity.
 - Modal inspired by [w3Schools How to CSS Modals](https://www.w3schools.com/howto/howto_css_modals.asp)
+
+
+#### About
+This game was created to show skills in Object Oriented JavaScript for the Udacity Front End Nanodegree Program.
